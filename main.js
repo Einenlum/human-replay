@@ -1,4 +1,5 @@
 import './style.css'
+import '@fontsource/coming-soon';
 
 window.onload = function() {
     const text = document.getElementById('text');
