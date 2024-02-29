@@ -105,7 +105,7 @@ reproduceText(myElement, values);
         hljs.highlightAll();
     });
 
-    document.getElementById('copy').addEventListener('click', (event) => {
+    document.getElementById('copy-code').addEventListener('click', (event) => {
         event.preventDefault();
         const code = document.getElementById('code');
         navigator.clipboard.writeText(code.textContent);

@@ -9,3 +9,7 @@ button {
 button:hover {
     @apply brightness-110;
 }
+
+button:active {
+    @apply brightness-50;
+}
