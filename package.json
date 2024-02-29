@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@fontsource/coming-soon": "^5.0.8",
+    "@fontsource/staatliches": "^5.0.18",
     "autoprefixer": "^10.4.17",
     "highlight.js": "^11.9.0",
     "postcss": "^8.4.35",

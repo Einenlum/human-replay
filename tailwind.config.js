@@ -8,6 +8,10 @@ export default {
         extend: {
             fontFamily: {
                 'cursive': ['Coming Soon', 'cursive'],
+                'display': ['Staatliches', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+                'button': '#40798C',
             },
         },
     },
