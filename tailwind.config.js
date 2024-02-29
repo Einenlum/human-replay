@@ -1,3 +1,5 @@
+const { iconsPlugin, getIconCollections } = require("@egoist/tailwindcss-icons")
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -7,14 +9,20 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                'cursive': ['Coming Soon', 'cursive'],
+                'cursive': ['Licorice', 'cursive'],
                 'display': ['Staatliches', 'system-ui', 'sans-serif'],
             },
             colors: {
                 'button': '#40798C',
+                'verdigris': '#70A9A1',
+                'ash': '#CFD7C7',
             },
         },
     },
-    plugins: [],
+    plugins: [
+        iconsPlugin({
+            collections: getIconCollections(['lucide']),
+        }),
+    ],
 }
 

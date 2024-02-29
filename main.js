@@ -1,8 +1,9 @@
 import './style.css'
 import '@fontsource/coming-soon';
 import '@fontsource/staatliches';
+import '@fontsource/licorice';
 import hljs from 'highlight.js/lib/core';
-import 'highlight.js/styles/atom-one-dark.css';
+import 'highlight.js/styles/nord.css';
 import javascript from 'highlight.js/lib/languages/javascript';
 hljs.registerLanguage('javascript', javascript);
 
@@ -12,6 +13,7 @@ window.onload = function() {
     const previewButton = document.getElementById('preview-button');
     const generateButton = document.getElementById('generate');
     const resetButton = document.getElementById('reset');
+    const codeWrapper = document.getElementById('code-wrapper');
 
     let values = [];
     let start = null;
@@ -60,7 +62,7 @@ window.onload = function() {
         e.preventDefault();
 
         const preview = document.getElementById('preview');
-        preview.classList.remove('invisible');
+        preview.classList.remove('hidden');
         reproduceText(preview);
     });
 
@@ -73,8 +75,7 @@ window.onload = function() {
     });
 
     const generateCode = () => {
-        return `
-const reproduceText = (element, values) => {
+        return `const reproduceText = (element, values) => {
     const printingStart = new Date();
 
     setInterval(() => {
@@ -89,6 +90,8 @@ const reproduceText = (element, values) => {
 };
 
 const values = ${JSON.stringify(values)};
+
+// const myElement = document.getElementById('your-element-id');
 reproduceText(myElement, values);
 `
     };
@@ -98,6 +101,7 @@ reproduceText(myElement, values);
 
         const code = document.getElementById('code');
         code.textContent = generateCode();
+        codeWrapper.classList.remove('hidden');
         hljs.highlightAll();
     });
 

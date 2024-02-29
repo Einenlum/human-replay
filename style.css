@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button {
+    @apply transition duration-300 ease-in-out;
+}
+
+button:hover {
+    @apply brightness-110;
+}

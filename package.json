@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@egoist/tailwindcss-icons": "^1.7.4",
     "@fontsource/coming-soon": "^5.0.8",
+    "@fontsource/licorice": "^5.0.18",
     "@fontsource/staatliches": "^5.0.18",
+    "@iconify-json/lucide": "^1.1.170",
     "autoprefixer": "^10.4.17",
     "highlight.js": "^11.9.0",
     "postcss": "^8.4.35",
