@@ -11,6 +11,7 @@
   "devDependencies": {
     "@fontsource/coming-soon": "^5.0.8",
     "autoprefixer": "^10.4.17",
+    "highlight.js": "^11.9.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.4"

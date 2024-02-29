@@ -6,17 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Human Replay</title>
 </head>
-<body class="bg-black">
-    <div class="w-3/4 mx-auto text-center pt-16">
-        <h1 class="text-4xl text-white font-cursive font-bold">Human Replay</h1>
+<body class="bg-slate-900">
+    <div class="pt-16">
+        <h1 class="text-4xl text-white font-cursive font-bold h-24">
+            Human Replay
+        </h1>
 
         <form class="mt-20">
-        <textarea name="text" id="text" cols="30" rows="10" class="border-2 border-gray-300 p-2"></textarea>
-        <button type="submit" class="block bg-blue-500 text-white p-2">Preview</button>
+            <textarea name="text" id="text" cols="30" rows="10" class="border-2 border-gray-300 p-2"></textarea>
+            <div class="flex gap-x-8 mx-auto">
+                <button type="submit" id="reset" class="block bg-blue-500 text-white p-2">Reset</button>
+                <button type="submit" class="block bg-blue-500 text-white p-2">Preview</button>
+            </div>
         </form>
 
         <div id="results" class="mt-20 text-white">
         </div>
+
+        <div class="flex gap-x-8 mx-auto">
+            <button id="generate" class="block bg-blue-500 text-white p-2">Generate code</button>
+            <button id="copy" class="block bg-blue-500 text-white p-2 hidden">Copy code</button>
+        </div>
+
+        <pre>
+            <code id="code" class="whitespace-pre-wrap">
+            </code>
+        </pre>
+
     </div>
 
     <script type="module" src="/main.js"></script>
