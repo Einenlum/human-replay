@@ -13,3 +13,11 @@ button:hover {
 button:active {
     @apply brightness-50;
 }
+
+a {
+    @apply transition duration-300 ease-in-out;
+}
+
+a:hover {
+    @apply text-ash;
+}

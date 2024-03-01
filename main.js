@@ -80,6 +80,7 @@ window.onload = function() {
     };
 
     resetButton.addEventListener('click', (event) => {
+        event.preventDefault();
         reset();
     });
 
