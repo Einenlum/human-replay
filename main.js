@@ -18,6 +18,7 @@ window.onload = function() {
     const copyCodeButton = document.getElementById('copy-code');
     const preview = document.getElementById('preview');
     const humanIsTheNewBlack = document.getElementById('human-is-the-new-black');
+    let interval = null;
 
     let values = [];
     let start = null;
@@ -53,7 +54,7 @@ window.onload = function() {
         element.textContent = '';
         const printingStart = new Date();
 
-        setInterval(() => {
+        return setInterval(() => {
             const timePassed = new Date() - printingStart;
 
             const value = values.filter((value) => value.time < timePassed).pop();
@@ -68,7 +69,7 @@ window.onload = function() {
         e.preventDefault();
 
         preview.classList.remove('hidden');
-        replayText(preview);
+        interval = replayText(preview);
     });
 
     const reset = () => {
@@ -77,6 +78,10 @@ window.onload = function() {
         setValues([]);
         start = null;
         text.value = '';
+        if (interval) {
+            clearInterval(interval);
+        }
+        interval = null;
     };
 
     resetButton.addEventListener('click', (event) => {
