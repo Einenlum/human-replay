@@ -82,6 +82,9 @@ window.onload = function() {
             clearInterval(interval);
         }
         interval = null;
+        code.textContent = '';
+        codeWrapper.classList.add('hidden');
+        delete code.dataset.highlighted;
     };
 
     resetButton.addEventListener('click', (event) => {
@@ -116,6 +119,9 @@ replayText(myElement, values);
 
     generateButton.addEventListener('click', (event) => {
         event.preventDefault();
+        delete code.dataset.highlighted;
+
+        generateButton.classList.add('hidden');
 
         code.textContent = generateCode();
         codeWrapper.classList.remove('hidden');
