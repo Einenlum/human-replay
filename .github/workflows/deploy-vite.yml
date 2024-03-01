@@ -1,4 +1,4 @@
-name: Vite Github Pages Deploy
+name: Deploy on Github Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   # Build job
-  build:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: demo

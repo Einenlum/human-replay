@@ -11,7 +11,7 @@
 
 > Make text appear exactly how you typed it. Copy paste a few JS lines.
 
-### 🏠 [Homepage](https://human-replay.github.io)
+### 🏠 [Homepage](https://einenlum.github.io/human-replay/)
 
 ## Author
 
