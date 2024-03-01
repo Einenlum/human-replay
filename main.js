@@ -68,6 +68,7 @@ window.onload = function() {
     previewButton.addEventListener('click', (e) => {
         e.preventDefault();
 
+        previewButton.classList.add('hidden');
         preview.classList.remove('hidden');
         interval = replayText(preview);
     });
