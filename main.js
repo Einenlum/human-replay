@@ -11,6 +11,7 @@ hljs.registerLanguage('javascript', javascript);
 window.onload = function() {
     const text = document.getElementById('text');
     const previewButton = document.getElementById('preview-button');
+    const replayButton = document.getElementById('replay-button');
     const generateButton = document.getElementById('generate');
     const resetButton = document.getElementById('reset');
     const codeWrapper = document.getElementById('code-wrapper');
@@ -69,15 +70,26 @@ window.onload = function() {
         e.preventDefault();
 
         previewButton.classList.add('hidden');
+        replayButton.classList.remove('hidden');
         preview.classList.remove('hidden');
         // which means it IS disabled (yes, lol)
         text.setAttribute('disabled', 'disabled');
         interval = replayText(preview, values);
     });
 
+    replayButton.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (interval) {
+            clearInterval(interval);
+        }
+        interval = replayText(preview, values);
+    });
+
     const reset = () => {
         previewButton.classList.add('hidden');
         preview.classList.add('hidden');
+        replayButton.classList.add('hidden');
         preview.textContent = '';
         text.removeAttribute('disabled');
         setValues([]);
