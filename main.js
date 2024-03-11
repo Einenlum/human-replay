@@ -105,19 +105,16 @@ window.onload = function() {
                 return;
             }
 
-            if (value.op === 'a') {
-                element.textContent = element.textContent + value.v;
-
-                return;
+            switch (value.op) {
+                case 'a':
+                    element.textContent = element.textContent + value.v;
+                    break;
+                case 'd':
+                    element.textContent = element.textContent.slice(0, -1);
+                    break;
+                default:
+                    element.textContent = value.v;
             }
-
-            if (value.op === 'd') {
-                element.textContent = element.textContent.slice(0, -1);
-
-                return;
-            }
-
-            element.textContent = value.v;
         }, 20);
 
         return localInterval;
@@ -193,19 +190,16 @@ const replayText = (element, values) => {
             return;
         }
 
-        if (value.op === 'a') {
-            element.textContent = element.textContent + value.v;
-
-            return;
+        switch (value.op) {
+            case 'a':
+                element.textContent = element.textContent + value.v;
+                break;
+            case 'd':
+                element.textContent = element.textContent.slice(0, -1);
+                break;
+            default:
+                element.textContent = value.v;
         }
-
-        if (value.op === 'd') {
-            element.textContent = element.textContent.slice(0, -1);
-
-            return;
-        }
-
-        element.textContent = value.v;
     }, 20);
 
     return localInterval;
