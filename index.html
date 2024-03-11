@@ -54,7 +54,6 @@
                 Generate code
                 <span class="i-lucide-code inline-block relative top-1"></span>
             </button>
-            <button id="copy" class="block bg-button text-white p-2 hidden">Copy code</button>
         </div>
 
         <div id="code-wrapper" class="hidden max-w-xl mx-auto" x-data="{vanilla: true}">
@@ -76,9 +75,14 @@
                 <code id="web-component-code" class="whitespace-pre-wrap" x-show="!vanilla">
                 </code>
 
-                <button id="copy-code" class="rounded block absolute top-4 right-4 bg-button text-white p-2 pb-1" @click="copyCode(vanilla ? '#vanilla-code' : '#web-component-code')"><span class="i-lucide-files"></span></button>
+                <div class="absolute top-4 right-4" x-data="{'tooltipOpen': false}">
+                        <button id="copy-code" class="rounded block bg-button text-white p-2 pb-1" @click="copyCode(vanilla ? '#vanilla-code' : '#web-component-code'); tooltipOpen = true; setTimeout(() => tooltipOpen = false, 1000)"><span class="i-lucide-files"></span></button>
+                    <div class="text-white rounded bg-black absolute right-10 bottom-0 p-2 animate-bounce" x-show="tooltipOpen" x-transition>
+                        Copied!
+                    </div>
+                </div>
             </pre>
-        <div>
+        </div>
 
     </div>
 
